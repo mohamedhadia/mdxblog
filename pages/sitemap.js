@@ -28,6 +28,11 @@ const { getAllNodes } = require("next-mdx");
     `;
 
   export async function getStaticProps() {
-    fs.writeFileSync("public/sitemap.xml", sitemap);
+    const xml = fs.writeFileSync("public/sitemap.xml", sitemap);
+    return {
+      props: {
+        xml,
+      },
+    };
   }
 })();
