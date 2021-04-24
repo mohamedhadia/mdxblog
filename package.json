@@ -4,7 +4,7 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "dev": "node ./pages/sitemap  && next dev",
+    "dev": "node ./scripts/sitemap  && next dev",
     "build": "next build",
     "preview": "next build && next start"
   },

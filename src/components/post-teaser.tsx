@@ -13,19 +13,21 @@ export function PostTeaser({ post, ...props }: PostTeaserProps) {
       <hr my="12" />
 
       <div
-        display="grid"
-        col="1fr 3fr"
-        gap="8"
-        justifyContent="space-between"
-        alignItems="center"
+        className="block "
+        // display="grid"
+        // className="grid grid-cols-3"
+        // gap="8"
+        // justifyContent="space-between"
+        // alignItems="center"
       >
         <div mt="4">
           <Image
+            className="object-cover object-center rounded-lg"
             src={post.frontMatter.image}
             alt={post.frontMatter.caption || post.frontMatter.title}
             layout="intrinsic"
             width={1650}
-            height={1650}
+            height={650}
           />
         </div>
         <div>
