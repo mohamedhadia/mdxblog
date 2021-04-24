@@ -33,7 +33,7 @@ export default function PostPage({ post }: PostPageProps) {
       <ArticleJsonLd
         url={post.url}
         title={post.frontMatter.title}
-        images={post.frontMatter.image}
+        images={[post.frontMatter.image]}
         datePublished={new Date(post.frontMatter.date).toISOString()}
         authorName={["Mohamed Hedeya"]}
         publisherName="Mohamed Hedeya"
