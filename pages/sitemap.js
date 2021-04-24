@@ -26,13 +26,13 @@ const { getAllNodes } = require("next-mdx");
     .join("")}
     </urlset>
     `;
-
-  export async function getStaticProps() {
-    const xml = fs.writeFileSync("public/sitemap.xml", sitemap);
-    return {
-      props: {
-        xml,
-      },
-    };
-  }
 })();
+
+export async function getStaticProps() {
+  const xml = fs.writeFileSync("public/sitemap.xml", sitemap);
+  return {
+    props: {
+      xml,
+    },
+  };
+}
