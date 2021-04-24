@@ -6,6 +6,7 @@ export default {
     textLighter: "#60696f",
     link: "#06f",
     background: "#fff",
+    white: "#fff",
     heading: "#07070a",
     primary: "#06f",
     primaryHover: "#005ae0",

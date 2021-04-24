@@ -1,13 +1,13 @@
 export default {
   site: {
     branding: {
-      name: "Blog.",
-      description: "A Next.js blog built using MDX and Reflexjs.",
+      name: "Mohamed Hedeya",
+      description: "A front-End Web Developer",
       icon: "logo",
       image: "/images/placeholder.jpg",
     },
-    twitter: "@arshadcn",
-    copyright: `© ${new Date().getFullYear()} Blog. Built with Next.js and Reflexjs.`,
+    twitter: "@q65_d",
+    copyright: `© ${new Date().getFullYear()} Mohamed Hedeya.`,
     links: [
       {
         title: "Home",
@@ -16,6 +16,10 @@ export default {
       {
         title: "About",
         href: "/about",
+      },
+      {
+        title: "Portofolio",
+        href: "/Portofolio",
       },
       {
         title: "Styleguide",
