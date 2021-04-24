@@ -1,0 +1,69 @@
+---
+title: A nice way to handle form states in ReactJS
+excerpt: "ReactJS form states with useState hook."
+date: "2021-04-24"
+published: true
+image: "/images/ReactJS-form-states-with-useState-hook.jpeg"
+caption: "A nice way to handle form states in ReactJS."
+author:
+  - Mohamed-Hedeya
+category:
+  - reactjs
+---
+
+## ReactJS form states with useState hook
+
+## example
+
+```
+{/* state */}
+const [person, setPerson] = useState({firstName:'', email:'', age:''})
+const [people, setPeople] = useState([])
+
+<input
+   type='text'
+   id='firstName'
+   name='firstName'
+   value={person.firsName}
+   onChange={handleChange}/>
+
+<input
+   type='text'
+   id='email'
+   name='email'
+   value={person.email}
+   onChange={handleChange}/>
+
+<input
+   type='text'
+   id='age'
+   name='age'
+   value={person.age}
+   onChange={handleChange}/>
+
+```
+
+## for handleChange
+
+```
+handleChange(e)=> {
+ const name = e.target.name;
+ const value = e.target.value;
+ setPerson({...person, [name]:value});
+}
+```
+
+## for the handleSubmit
+
+```
+const handleSubmit(e)=> {
+   e.preventDefault();
+   if(person.firstName && person.email && person.age) {
+      const newPerson = {...person, id: new Date().getTime().toString()};
+      setPeople([...people, newPerson]);
+      setPerson({firstName:'', email:'', age:''})
+
+   }
+}
+
+```
