@@ -1,5 +1,5 @@
-// const fs = require("fs");
-import fs from "fs";
+const fs = require("fs");
+// import fs from "fs";
 const { getAllNodes } = require("next-mdx");
 
 (async () => {
