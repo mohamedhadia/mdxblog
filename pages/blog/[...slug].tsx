@@ -3,6 +3,7 @@ import { getMdxNode, getMdxPaths } from "next-mdx/server";
 import { useHydrate } from "next-mdx/client";
 import { components } from "@reflexjs/mdx";
 import readingTime from "reading-time";
+import { ArticleJsonLd } from "next-seo";
 
 import { Post } from "types";
 import { Layout } from "@/components/layout";
@@ -29,6 +30,17 @@ export default function PostPage({ post }: PostPageProps) {
         type: "article",
       }}
     >
+      <ArticleJsonLd
+        url={post.url}
+        title={post.frontMatter.title}
+        images={post.frontMatter.image}
+        datePublished={new Date(post.frontMatter.date).toISOString()}
+        authorName={["Mohamed Hedeya"]}
+        publisherName="Mohamed Hedeya"
+        publisherLogo="https://www.mohamedhedeya.com/images/Logo.png"
+        description={post.frontMatter.excerpt}
+      />
+
       <LayoutGrid>
         <h1 variant="heading.h1">{post.frontMatter.title}</h1>
         {post.frontMatter.excerpt && (

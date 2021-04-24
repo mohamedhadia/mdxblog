@@ -22,7 +22,7 @@ export function PostTeaser({ post, ...props }: PostTeaserProps) {
         <div mt="4">
           <Image
             src={post.frontMatter.image}
-            alt={post.frontMatter.title}
+            alt={post.frontMatter.caption || post.frontMatter.title}
             layout="intrinsic"
             width={1650}
             height={1650}
