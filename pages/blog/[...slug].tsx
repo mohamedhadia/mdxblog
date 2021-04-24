@@ -39,7 +39,6 @@ export default function PostPage({ post }: PostPageProps) {
         publisherName="Mohamed Hedeya"
         publisherLogo="https://www.mohamedhedeya.com/images/Logo.png"
         description={post.frontMatter.excerpt}
-        keywords={post.frontMatter.keywords}
       />
 
       <LayoutGrid>
