@@ -5,6 +5,7 @@ interface Post
     title: string
     date?: string
     excerpt?: string
+    keywords?: string
     featured?: boolean
     image?: string
     caption?: string
