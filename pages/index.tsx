@@ -1,26 +1,36 @@
-import * as React from "react"
-import { getAllNodes } from "next-mdx/server"
-import readingTime from "reading-time"
+import * as React from "react";
+import { getAllNodes } from "next-mdx/server";
+import readingTime from "reading-time";
+import { BlogJsonLd } from "next-seo";
 
-import { Post } from "types"
-import { useSearch } from "@/hooks/use-search"
-import { Layout } from "@/components/layout"
-import { PostTeaser } from "@/components/post-teaser"
-import { LayoutGrid } from "@/components/layout-grid"
-import { SearchForm } from "@/components/search-form"
+import { Post } from "types";
+import { useSearch } from "@/hooks/use-search";
+import { Layout } from "@/components/layout";
+import { PostTeaser } from "@/components/post-teaser";
+import { LayoutGrid } from "@/components/layout-grid";
+import { SearchForm } from "@/components/search-form";
 
 export interface IndexPageProps {
-  posts: Post[]
+  posts: Post[];
 }
 
 export default function IndexPage({ posts }: IndexPageProps) {
   const { hits, search, query } = useSearch<Post>(posts, {
     useExtendedSearch: true,
     keys: ["frontMatter.title", "frontMatter.excerpt"],
-  })
+  });
 
   return (
     <Layout>
+      <BlogJsonLd
+        url="https://www.mohamedhedeya.com/"
+        title="mohamed hedeya blog"
+        images={["https://www.mohamedhedeya.com/images/Logo.png"]}
+        datePublished="2021-04-23T08:00:00+08:00"
+        dateModified="2021-04-23T08:00:00+08:00"
+        authorName="Mohamed Hedeya"
+        description="writing about reactjs, wordpress, design, tech solutions and more."
+      />
       <LayoutGrid>
         <div gridColumn="wide-start/wide-end">
           <div
@@ -53,11 +63,11 @@ export default function IndexPage({ posts }: IndexPageProps) {
         </div>
       </LayoutGrid>
     </Layout>
-  )
+  );
 }
 
 export async function getStaticProps() {
-  const posts = await getAllNodes<Post>("post")
+  const posts = await getAllNodes<Post>("post");
 
   return {
     props: {
@@ -66,5 +76,5 @@ export async function getStaticProps() {
         readingTime: readingTime(post.content),
       })),
     },
-  }
+  };
 }
