@@ -15,7 +15,7 @@ category:
 
 ## example
 
-```
+```jsx
 {/* state */}
 const [person, setPerson] = useState({firstName:'', email:'', age:''})
 const [people, setPeople] = useState([])
@@ -45,7 +45,7 @@ const [people, setPeople] = useState([])
 
 ## for handleChange
 
-```
+```jsx
 handleChange(e)=> {
  const name = e.target.name;
  const value = e.target.value;
@@ -55,7 +55,7 @@ handleChange(e)=> {
 
 ## for the handleSubmit
 
-```
+```jsx
 const handleSubmit(e)=> {
    e.preventDefault();
    if(person.firstName && person.email && person.age) {
