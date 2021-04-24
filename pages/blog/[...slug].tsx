@@ -8,7 +8,6 @@ import { Post } from "types";
 import { Layout } from "@/components/layout";
 import { PostMeta } from "@/components/post-meta";
 import { LayoutGrid } from "@/components/layout-grid";
-// import Comments from "@/components/comments";
 
 export interface PostPageProps {
   post: Post;
@@ -59,9 +58,6 @@ export default function PostPage({ post }: PostPageProps) {
         {content}
 
         <hr style={{ marginTop: "80px", marginBottom: "80px" }} />
-        {/* <div>
-          <Comments fullUrl={post.url} id={post.url} />
-        </div> */}
       </LayoutGrid>
     </Layout>
   );
