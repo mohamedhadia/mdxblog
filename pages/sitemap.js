@@ -27,5 +27,7 @@ const { getAllNodes } = require("next-mdx");
     </urlset>
     `;
 
-  fs.writeFileSync("public/sitemap.xml", sitemap);
+  export async function getStaticProps() {
+    fs.writeFileSync("public/sitemap.xml", sitemap);
+  }
 })();
