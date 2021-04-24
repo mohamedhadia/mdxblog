@@ -4,7 +4,7 @@ export default {
       name: "Mohamed Hedeya",
       description: "A front-End Web Developer",
       icon: "logo",
-      image: "/public/images/Logo.png",
+      image: "/images/Logo.png",
     },
     twitter: "@q65_d",
     copyright: `© ${new Date().getFullYear()} Mohamed Hedeya.`,
