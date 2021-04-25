@@ -1,32 +1,36 @@
-import { Icon, VisuallyHidden } from "reflexjs"
+import React from "react";
+import { useForm, ValidationError } from "@formspree/react";
+import { Icon, VisuallyHidden } from "reflexjs";
 
 export function ContactForm() {
+  const [state, handleSubmit] = useForm("xoqyvopy");
+  if (state.succeeded) {
+    return <p>Thanks for reaching out!</p>;
+  }
   return (
-    <form display="grid" col="1|2" gap="4" mt="4" w="full|auto">
+    <form
+      display="grid"
+      col="1|2"
+      gap="4"
+      mt="4"
+      w="full|auto"
+      onSubmit={handleSubmit}
+    >
       <div>
         <VisuallyHidden>
           <label htmlFor="name">Name</label>
         </VisuallyHidden>
         <input
           variant="input"
-          type="text"
+          type="name"
           id="name"
           name="name"
           placeholder="Name"
+          required
         />
+        <ValidationError prefix="name" field="name" errors={state.errors} />
       </div>
-      <div>
-        <VisuallyHidden>
-          <label htmlFor="email">Email</label>
-        </VisuallyHidden>
-        <input
-          variant="input"
-          type="email"
-          id="email"
-          name="email"
-          placeholder="Email"
-        />
-      </div>
+
       <div>
         <VisuallyHidden>
           <label htmlFor="phone">Phone</label>
@@ -39,15 +43,19 @@ export function ContactForm() {
           placeholder="Phone"
         />
       </div>
-      <div>
+      <div colStart="span 2">
         <VisuallyHidden>
-          <label htmlFor="subject">Subject</label>
+          <label htmlFor="email">Email</label>
         </VisuallyHidden>
-        <select variant="select" id="subject" name="subject">
-          <option value="">Select</option>
-          <option value="one">Option One</option>
-          <option value="two">Option Two</option>
-        </select>
+        <input
+          variant="input"
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Email"
+          required
+        />
+        <ValidationError prefix="email" field="email" errors={state.errors} />
       </div>
       <div colStart="span 2">
         <VisuallyHidden>
@@ -59,14 +67,23 @@ export function ContactForm() {
           id="message"
           name="message"
           rows={10}
+          required
+        />
+        <ValidationError
+          prefix="Message"
+          field="message"
+          errors={state.errors}
         />
       </div>
-      <div display="grid" col="1|2" gap="4" colStart="span 2">
-        <button type="submit" variant="button.primary">
+      <div display="grid" col="1" gap="4" colStart="span 2">
+        <button
+          type="submit"
+          variant="button.primary"
+          disabled={state.submitting}
+        >
           Send message <Icon name="arrow-right" ml="2" />
         </button>
-        <button variant="button.secondary">Button</button>
       </div>
     </form>
-  )
+  );
 }
