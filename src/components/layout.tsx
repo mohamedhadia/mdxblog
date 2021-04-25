@@ -1,29 +1,29 @@
-import Head from "next/head"
+import Head from "next/head";
 
-import config from "@/config"
-import { Navbar } from "@/components/navbar"
-import { Footer } from "@/components/footer"
+import config from "@/config";
+import { Navbar } from "@/components/navbar";
+import { Footer } from "@/components/footer";
 
 function absoluteUrl(path: string) {
   return path
     ? `${process.env.NEXT_PUBLIC_SITE_URL}/${path.replace(/^\/+/, "")}`
-    : process.env.NEXT_PUBLIC_SITE_URL
+    : process.env.NEXT_PUBLIC_SITE_URL;
 }
 
 export interface Meta {
-  title?: string
-  description?: string
-  path?: string
-  type?: string
-  site_name?: string
-  image?: string
-  twitter?: string
-  date?: string
+  title?: string;
+  description?: string;
+  path?: string;
+  type?: string;
+  site_name?: string;
+  image?: string;
+  twitter?: string;
+  date?: string;
 }
 
 export interface LayoutProps {
-  children: React.ReactNode
-  meta?: Meta
+  children: React.ReactNode;
+  meta?: Meta;
 }
 
 const defaultMeta: Meta = {
@@ -32,15 +32,15 @@ const defaultMeta: Meta = {
   site_name: config.site.branding.name,
   image: config.site.branding.image,
   twitter: config.site.twitter,
-}
+};
 
 export function Layout({ meta, children }: LayoutProps) {
-  const { site } = config
+  const { site } = config;
 
   meta = {
     ...defaultMeta,
     ...meta,
-  }
+  };
 
   return (
     <>
@@ -62,10 +62,11 @@ export function Layout({ meta, children }: LayoutProps) {
         {meta.date && (
           <meta property="article:published_time" content={meta.date} />
         )}
+        <meta name="yandex-verification" content="eea01d80647878d0" />
       </Head>
       <Navbar branding={site.branding} links={site.links} />
       <main>{children}</main>
       <Footer copyright={site.copyright} />
     </>
-  )
+  );
 }
