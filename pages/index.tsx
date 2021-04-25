@@ -27,7 +27,7 @@ export default function IndexPage({ posts }: IndexPageProps) {
         title="mohamed hedeya blog"
         images={["https://www.mohamedhedeya.com/images/Logo.png"]}
         datePublished="2021-04-23T08:00:00+08:00"
-        dateModified="2021-04-23T08:00:00+08:00"
+        dateModified="2021-04-25T08:00:00+08:00"
         authorName="Mohamed Hedeya"
         description="writing about reactjs, wordpress, design, tech solutions and more."
       />
