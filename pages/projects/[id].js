@@ -63,7 +63,7 @@ export default function Portofolio({ data }) {
         </div>
         <div className="pt-16 pb-32">
           <h2 className="text-6xl font-bold mt-6">{data.title}</h2>
-          <p className="text-xl w-1/2 text-center mx-auto tracking-wide leading-relaxed mt-4">
+          <p className="text-xl w-full lg:w-2/3 p-6 text-center mx-auto tracking-wide leading-relaxed mt-4">
             {data.desc}
           </p>
         </div>
