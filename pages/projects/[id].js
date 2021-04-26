@@ -5,32 +5,6 @@ import { TimelineLite, Power2 } from "gsap";
 import { CSSRulePlugin } from "gsap/dist/CSSRulePlugin";
 gsap.registerPlugin(CSSRulePlugin);
 
-let easing = [0.6, -0.05, 0.01, 0.99];
-
-const stagger = {
-  animate: {
-    transition: {
-      staggerChildren: 0.05,
-    },
-  },
-};
-
-const fadeInUp = {
-  initial: {
-    y: 60,
-    opacity: 0,
-    transition: { duration: 0.6, ease: easing },
-  },
-  animate: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.6,
-      ease: easing,
-    },
-  },
-};
-
 export default function Portofolio({ data }) {
   let image = useRef(null);
   let container = useRef(null);
