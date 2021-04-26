@@ -21,11 +21,11 @@ export function PostTeaser({ post, ...props }: PostTeaserProps) {
         // alignItems="center"
       >
         <div mt="4">
-          <img
+          <Image
             className="object-cover object-center rounded-lg"
             src={post.frontMatter.image}
             alt={post.frontMatter.caption || post.frontMatter.title}
-            // layout="intrinsic"
+            layout="intrinsic"
             width={1650}
             height={650}
           />
