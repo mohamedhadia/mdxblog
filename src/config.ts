@@ -2,7 +2,7 @@ export default {
   site: {
     branding: {
       name: "Mohamed Hedeya",
-      description: "A front-End Web Developer",
+      description: "Articles about Tech, Web Technologies and Resources to help make your life easier!",
       icon: "logo",
       image: "/images/Logo.png",
     },
