@@ -1,4 +1,6 @@
 import * as React from "react";
+import Ad from "@/components/Ad";
+
 import { getAllNodes } from "next-mdx/server";
 import readingTime from "reading-time";
 import { BlogJsonLd } from "next-seo";
@@ -31,6 +33,8 @@ export default function IndexPage({ posts }: IndexPageProps) {
         authorName="Mohamed Hedeya"
         description="writing about reactjs, wordpress, design, tech solutions and more."
       />
+
+      <Ad slotId="add" width={728} height={90} />
       <LayoutGrid>
         <div gridColumn="wide-start/wide-end">
           <div
