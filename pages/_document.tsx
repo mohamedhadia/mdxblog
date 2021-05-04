@@ -28,7 +28,7 @@ export default class extends Document {
 
           <script
             data-ad-client="ca-pub-8492395581433688"
-            defer
+            async
             src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
           ></script>
         </Head>
