@@ -9,6 +9,7 @@ import { Layout } from "@/components/layout";
 import { PostTeaser } from "@/components/post-teaser";
 import { LayoutGrid } from "@/components/layout-grid";
 import { SearchForm } from "@/components/search-form";
+import AdBanner from "@/components/AdBanner";
 
 export interface IndexPageProps {
   posts: Post[];
@@ -33,6 +34,8 @@ export default function IndexPage({ posts }: IndexPageProps) {
       />
       <LayoutGrid>
         <div gridColumn="wide-start/wide-end">
+          <AdBanner slotId="test" />
+
           <div
             display="grid"
             col="1|2"
